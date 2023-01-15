@@ -1,9 +1,10 @@
-export function getAppointmentsForDay(state, day) {
-  if (state.days.length === 0) {
+export default function getAppointmentsForDay(state, name) {
+  const filteredDays = state.days.filter(day => day.name === name);
+  if (state.days.length === 0 || filteredDays.length === 0) {
     return [];
   }
   // find today/day we're looking for
-  const filteredDays = state.days.filter( dayObject => dayObject.name === day);
+  // const filteredDays = state.days.filter( dayObject => dayObject.name === day);
   // filter always returns an array, we wanted first element of array hence [0]
   console.log(filteredDays[0])
   const currentDay = filteredDays[0];
@@ -21,3 +22,11 @@ export function getAppointmentsForDay(state, day) {
   return mappedDays;
 }
 
+export function getInterview(state, interview) {
+  if(!interview) return null;
+  const filteredInterview = {};
+  filteredInterview.student = interview.student;
+  filteredInterview.interviewer = state.interviewers[interview.interviewer];
+  return filteredInterview;
+
+}
