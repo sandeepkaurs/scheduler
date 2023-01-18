@@ -32,11 +32,11 @@ export function getInterview(state, interview) {
 }
 
 export function getInterviewersForDay(state, name) {
-  const filteredDays = state.days.filter(day => day.name === name);
-  if(state.days.length===0 || filteredDays.length===0) {
+  const filteredDays = state.days.find(day => day.name === name);
+  if(state.days.length === 0 || !filteredDays) {
     return [];
   }
-  const interviewersFromDays = filteredDays[0].interviewers;
+  const interviewersFromDays = filteredDays.interviewers;
   const filteredInterviewers = [];
   for(let interviewer of interviewersFromDays) {
     filteredInterviewers.push(state.interviewers[interviewer]);
