@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import axios from "__mocks__/axios";
+import axios from "axios";
 
 export default function useApplicationData() {
   const [state, setState] = useState({
@@ -117,19 +117,23 @@ export default function useApplicationData() {
     days[dayOfWeek] = day
 
     const url = `http://localhost:8001/api/appointments/${id}`;
-    let req = {
-      url,
-      method: 'DELETE',
-      data: appointment
-    }
-    return Axios(req).then(response => {
+    // let req = {
+    //   url,
+    //   method: 'DELETE',
+    //   data: appointment
+    // }
+    // return Axios(req).then(response => {
       
-      setState({
-        ...state,
-        appointments,
-        days
-      });
-    })
+    //   setState({
+    //     ...state,
+    //     appointments,
+    //     days
+    //   });
+    // })
+
+    return axios.delete(url, appointment).then(() => {
+      setState({...state, appointments, days});
+    });
   }
   return {
     state,
