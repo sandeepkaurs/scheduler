@@ -44,7 +44,7 @@ export default function useApplicationData() {
 
   //function below to book interview
   function bookInterview(id, interview) {
-    console.log(id, interview);
+    
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -113,7 +113,7 @@ export default function useApplicationData() {
     }
 
     let days = state.days;
-    console.log("these are the days", days)
+    
     days[dayOfWeek] = day
 
     const url = `http://localhost:8001/api/appointments/${id}`;
@@ -123,7 +123,7 @@ export default function useApplicationData() {
       data: appointment
     }
     return Axios(req).then(response => {
-      console.log("response from delete", response);
+      
       setState({
         ...state,
         appointments,
