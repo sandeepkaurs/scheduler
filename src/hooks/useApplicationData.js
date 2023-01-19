@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
+import axios from "__mocks__/axios";
 
 export default function useApplicationData() {
   const [state, setState] = useState({
@@ -25,7 +26,6 @@ export default function useApplicationData() {
       Axios.get(appointmentURL),
       Axios.get(interviewersURL)
     ]).then((all) => {
-      console.log(all);
       setState(prev => ({ ...prev, days:all[0].data, appointments:all[1].data, interviewers:all[2].data }));
     })
   }, []);
@@ -77,21 +77,20 @@ export default function useApplicationData() {
     days[dayOfWeek] = day;
 
     const url = `http://localhost:8001/api/appointments/${id}`;
-    let req = {
-      url,
-      method: 'PUT',
-      data: appointment
-    }
-    return Axios(req).then(response => {
-
-      console.log("response from book", response.data)
+    // let req = {
+    //   url,
+    //   method: 'PUT',
+    //   data: appointment
+    // }
+    // return Axios(req).then(response => {
+    return axios.put(url, appointment).then(() => {
       setState({
         ...state,
         appointments,
         days
       });
-
     })
+   
   }
 
   //function below to cancel interview

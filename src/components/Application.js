@@ -18,9 +18,9 @@ export default function Application(props) {
   const interviewers = getInterviewersForDay(state, state.day);
   const schedule = appointments.map(appointment => {
     const interview = getInterview(state, appointment.interview);
-    
-    
-    
+
+
+
     return (
       <Appointment
         key={appointment.id}
@@ -35,6 +35,7 @@ export default function Application(props) {
   })
 
   return (
+
     <main className="layout">
       <section className="sidebar">
         <img
@@ -51,17 +52,20 @@ export default function Application(props) {
           />
         </nav>
         <img
+          alt="Lighthouse Labs"
           className="sidebar__lhl sidebar--centered"
           src="images/lhl.png"
-          alt="Lighthouse Labs"
         />
       </section>
       <section className="schedule">
-        {schedule}
-        <Appointment key="last" time="5pm" />
+        <section className="schedule">
+          {schedule}
+          <Appointment key="last" time="5pm" />
+        </section>
       </section>
     </main>
+
   );
 
-  
+
 }
