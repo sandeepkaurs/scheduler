@@ -26,3 +26,14 @@ npm run storybook
 ### **_Sandeep K Singh_**
 ### <sub>Nov 14 Cohort</sub>
 
+!["Booking Interview"](https://github.com/sandeepkaurs/scheduler/blob/master/docs/1_BookingInterview.png?raw=true)
+
+!["Error Msg-Select Interviewer"](https://github.com/sandeepkaurs/scheduler/blob/master/docs/2_ErrorMsgSelectInterviewer.png?raw=true)
+
+!["Error Msg-Student Name Cannot Be Blank"](https://github.com/sandeepkaurs/scheduler/blob/master/docs/3_ErrorMsgStudentNameCannotBeBlank.png?raw=true)
+
+!["Booked Interview"](https://github.com/sandeepkaurs/scheduler/blob/master/docs/4_BookedInterview.png?raw=true)
+
+!["Deleting Interview"](https://github.com/sandeepkaurs/scheduler/blob/master/docs/5_DeletingInterview.png?raw=true)
+
+!["Deleting Message"](https://github.com/sandeepkaurs/scheduler/blob/master/docs/6_DeletingMessage.png?raw=true)
