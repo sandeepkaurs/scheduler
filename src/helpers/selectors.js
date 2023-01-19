@@ -3,9 +3,6 @@ export function getAppointmentsForDay(state, name) {
   if (state.days.length === 0 || filteredDays.length === 0) {
     return [];
   }
-  // find today/day we're looking for
-  // const filteredDays = state.days.filter( dayObject => dayObject.name === day);
-  // filter always returns an array, we wanted first element of array hence [0]
   
   const currentDay = filteredDays[0];
   

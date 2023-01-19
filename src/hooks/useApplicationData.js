@@ -77,12 +77,7 @@ export default function useApplicationData() {
     days[dayOfWeek] = day;
 
     const url = `http://localhost:8001/api/appointments/${id}`;
-    // let req = {
-    //   url,
-    //   method: 'PUT',
-    //   data: appointment
-    // }
-    // return Axios(req).then(response => {
+   
     return axios.put(url, appointment).then(() => {
       setState({
         ...state,
@@ -117,20 +112,7 @@ export default function useApplicationData() {
     days[dayOfWeek] = day
 
     const url = `http://localhost:8001/api/appointments/${id}`;
-    // let req = {
-    //   url,
-    //   method: 'DELETE',
-    //   data: appointment
-    // }
-    // return Axios(req).then(response => {
-      
-    //   setState({
-    //     ...state,
-    //     appointments,
-    //     days
-    //   });
-    // })
-
+    
     return axios.delete(url, appointment).then(() => {
       setState({...state, appointments, days});
     });
@@ -141,11 +123,4 @@ export default function useApplicationData() {
     bookInterview,
     cancelInterview
   }
-
-}
-
-
-// what does a spread operator do?
-
-// -makes a shallow copy is what we use the spread operator for
-// strips off the outer braces
+};

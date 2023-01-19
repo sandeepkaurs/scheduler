@@ -60,6 +60,5 @@ export default function Form(props) {
       </section>
     </main>
   )
-}
+};
 
-// <Button confirm onClick={() => props.onSave(name, interviewer)}>Save</Button>

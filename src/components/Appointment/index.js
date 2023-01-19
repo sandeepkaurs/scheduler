@@ -44,14 +44,6 @@ export default function Appointment(props) {
       transition(ERROR_DELETE, true)
     })
   }
-// above function could be replaced with lines 48-54
-  // function destroy(event) {
-  //   transition(DELETING, true);
-  //   props
-  //    .cancelInterview(props.id)
-  //    .then(() => transition(EMPTY))
-  //    .catch(error => transition(ERROR_DELETE, true));
-  //  }
 
   return (
     <article className="appointment" data-testid="appointment">
@@ -59,8 +51,6 @@ export default function Appointment(props) {
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
         <Show
-          // student={props.interview.student}
-          // interviewer={props.interview.interviewer}
           interview = {props.interview}
           onDelete = {() => transition(CONFIRM)}
           onEdit={() => transition(EDIT)}

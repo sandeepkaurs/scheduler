@@ -21,3 +21,8 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Project Completed By: 
+### **_Sandeep K Singh_**
+### <sub>Nov 14 Cohort</sub>
+
