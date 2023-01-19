@@ -8,6 +8,7 @@ export default function useApplicationData() {
     appointments: {},
     interviewers: {},
   });
+  
 
   //function below will set day inside useState above
   const setDay = day => {
@@ -24,7 +25,8 @@ export default function useApplicationData() {
       Axios.get(appointmentURL),
       Axios.get(interviewersURL)
     ]).then((all) => {
-      setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
+      console.log(all);
+      setState(prev => ({ ...prev, days:all[0].data, appointments:all[1].data, interviewers:all[2].data }));
     })
   }, []);
 
@@ -88,7 +90,7 @@ export default function useApplicationData() {
         appointments,
         days
       });
-      
+
     })
   }
 
