@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
 
 export default function InterviewerList(props) {
- 
+  
   const interviewersListData = props.interviewers.map((interviewerItem) => {
     return (
       <InterviewerListItem
         key={interviewerItem.id}
         name={interviewerItem.name}
         avatar={interviewerItem.avatar}
-        selected={interviewerItem.id === props.value}
+        selected={interviewerItem.id === props.interviewer}
         setInterviewer={() => props.onChange(interviewerItem.id)}
       />
     );

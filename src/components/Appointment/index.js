@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "components/Appointment/styles.scss"
 import Header from "./Header";
 import Empty from "./Empty"
@@ -20,7 +20,7 @@ export default function Appointment(props) {
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
   const DELETING = "DELETING";
-
+  
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
@@ -79,8 +79,9 @@ export default function Appointment(props) {
       )}
       {mode === EDIT && (
         <Form
-        interviewer={props.interviewer}
+        interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers}
+        student={props.interview.student}
         onSave={save}
         onCancel={back}
         />
